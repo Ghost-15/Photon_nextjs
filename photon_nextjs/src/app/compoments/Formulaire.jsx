@@ -22,6 +22,7 @@ export default function Formulaire () {
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('')
     const [errMsg, setErrMsg] = useState('');
+    const [succMsg, setSuccMsg] = useState('');
 
     const isSubmiting = document.getElementById("Submit")
     const isLoading = document.getElementById("Loading")
@@ -34,6 +35,7 @@ export default function Formulaire () {
     const sendMail = async (e) => {
         e.preventDefault();
         setErrMsg('')
+        setSuccMsg('')
 
         try {
             if(check_email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
@@ -54,9 +56,13 @@ export default function Formulaire () {
                 })
 
                 if (response?.status === 200) {
-                    setErrMsg('Your Mail has been sent successfully')
+                    setSuccMsg('Your Mail has been sent successfully')
                     isSubmiting.style.display = "block";
                     isLoading.style.display = "none";
+                    setName('')
+                    setEmail('')
+                    setSubject('')
+                    setMessage('')
                 }else {
                     setErrMsg('Sorry, We are facing a technical problem.. please send the email by your mailbox')
                     isSubmiting.style.display = "block";
@@ -100,6 +106,7 @@ export default function Formulaire () {
                         <p>Can't find what you're searching for?<br/>
                             Fill in the details below</p>
                         <p ref={errRef} className="text-red-600 text-xl">{errMsg}</p>
+                        <p ref={errRef} className="text-green-600 text-xl">{succMsg}</p>
 
                         <form onSubmit={sendMail}>
                         <div className="input-box">
