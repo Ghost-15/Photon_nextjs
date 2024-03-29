@@ -69,7 +69,7 @@ export default function Home() {
 
             <div className="containerphoto p-10">
                 <img src="https://images.unsplash.com/photo-1609373235983-bef55d06268d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="h-96 w-screen" alt="Snow"/>
-                <div className='absolute top-20 right-20 p-5 text-white'>
+                <div className='absolute top-20 left-20 p-5 text-white'>
                     <h4 className='text-3xl text-red-600'>Why choose Photon?</h4>
                     <h1 className='text-2xl'>We provide effective technology <br/>solutions to our customers needs and challenges.</h1>
                 </div>
