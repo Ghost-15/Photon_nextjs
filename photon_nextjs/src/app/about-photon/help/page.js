@@ -1,4 +1,5 @@
-import Info from '/src/app/compoments/Info'
+import Formulaire from "@/app/compoments/Formulaire";
+import React from "react";
 
 export const metadata = {
     title: 'Contact Us',
@@ -26,7 +27,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <Info/>
+            <Formulaire/>
         </main>
     )
 }
